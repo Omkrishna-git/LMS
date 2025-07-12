@@ -38,3 +38,4 @@ next-env.d.ts
 
 
 .trunk
+/lib/generated/prisma

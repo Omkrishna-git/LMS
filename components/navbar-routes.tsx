@@ -6,11 +6,12 @@ import { LogOut } from "lucide-react";
 import Link from "next/link";
 
 import { Button } from "@/components/ui/button";
-// import { isTeacher } from "@/lib/teacher";
+import { isTeacher } from "@/lib/teacher";
 
 // import { SearchInput } from "./search-input";
 
 export const NavbarRoutes = () => {
+
   const { userId } = useAuth();
   const pathname = usePathname();
 
@@ -26,22 +27,27 @@ export const NavbarRoutes = () => {
         </div>
       )}
       <div className="flex gap-x-2 ml-auto">
-        {/* {isTeacherPage || isCoursePage ? ( */}
+        {isTeacherPage || isCoursePage ? (
           <Link href="/">
             <Button size="sm" variant="ghost">
               <LogOut className="h-4 w-4 mr-2" />
-              Exit
+                Exit
             </Button>
           </Link>
-        {/* ) : isTeacher(userId) ? ( */}
+         ) : isTeacher(userId) ? ( 
           <Link href="/teacher/courses">
             <Button size="sm" variant="ghost">
               Teacher mode
             </Button>
           </Link>
-        {/* ) : null} */}
-        <UserButton
-          afterSignOutUrl="/"
+          ) : null} 
+        <UserButton 
+          appearance={{
+            elements: {
+              userButtonAvatarBox: "w-9 h-9",
+              userButtonAvatar: "rounded-full",
+            },
+          }}
         />
       </div>
     </>

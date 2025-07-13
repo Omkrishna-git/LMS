@@ -35,12 +35,12 @@ const CourseIdPage = async ({
         include: {
             chapters: {
                 orderBy: {
-                position: "asc",
+                    position: "asc",
                 },
             },
             attachments: {
                 orderBy: {
-                createdAt: "desc",
+                    createdAt: "desc",
                 },
             },
         },

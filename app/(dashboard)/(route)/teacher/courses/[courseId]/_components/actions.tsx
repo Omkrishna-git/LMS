@@ -75,7 +75,7 @@ export const Actions = ({
                 {isPublished ? "Unpublish" : "Publish"}
             </Button>
             <ConfirmModal onConfirm={onDelete}>
-                <Button size="sm" disabled={isLoading}>
+                <Button className="bg-sky-900 hover:bg-sky-800 text-white" size="sm" disabled={isLoading}>
                     <Trash className="h-4 w-4" />
                 </Button>
             </ConfirmModal>

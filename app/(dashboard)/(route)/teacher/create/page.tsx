@@ -7,6 +7,7 @@ import { useForm } from "react-hook-form";
 import { useRouter } from "next/navigation";
 import Link from "next/link";
 import toast from "react-hot-toast";
+import { cn } from "@/lib/utils";
 
 import {
     Form,
@@ -90,9 +91,18 @@ const CreatePage = () => {
                                     Cancel
                                 </Button>
                             </Link>
-                            <Button type="submit" disabled={!isValid || isSubmitting}>
+
+                            <Button
+                                type="submit"
+                                disabled={!isValid || isSubmitting}
+                                className={cn(
+                                    "bg-sky-900 hover:bg-sky-800 text-white",
+                                    "disabled:opacity-50 disabled:cursor-not-allowed"
+                                )}
+                            >
                                 Continue
                             </Button>
+
                         </div>
                     </form>
                 </Form>

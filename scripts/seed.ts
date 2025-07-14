@@ -13,13 +13,24 @@ async function main() {
                 { name: "Accounting" },
                 { name: "Engineering" },
                 { name: "Filming" },
-            ]
+                { name: "Business" },
+                { name: "Reading" },
+                { name: "Geography" },
+                { name: "History" },
+                { name: "Marketing" },
+                { name: "Economics" },
+                { name: "Science" },
+                { name: "Drawing" },
+                { name: "Painting" },
+                { name: "Psychology" },
+                { name: "Languages" },
+            ],
+            skipDuplicates: true 
         });
 
-        console.log("Success");
-        
+        console.log("Categories seeded successfully");
     } catch (error) {
-        console.log("Error seeding the database categories", error);
+        console.error("Error seeding the database categories:", error);
     } finally {
         await database.$disconnect();
     }

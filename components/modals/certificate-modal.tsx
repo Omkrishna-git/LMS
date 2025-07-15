@@ -44,17 +44,26 @@ export const CertificateModal = ({
 
     try {
       setLoading(true);
-      const response = await axios.post(`/api/courses/${courseId}/certificate`, {
-        name: parsed.data.name,
-      });
+      const response = await axios.post(
+        `/api/courses/${courseId}/certificate`,
+        { name: parsed.data.name },
+        {
+          responseType: "blob", // 👈 important!
+        }
+      );
 
-      const url = response.data?.url;
-      if (url) {
-        window.open(url, "_blank"); // You can also trigger a direct download
-        toast.success("Certificate ready!");
-      } else {
-        toast.error("Certificate generation failed.");
-      }
+      // Create a downloadable blob
+      const blob = new Blob([response.data], { type: "application/pdf" });
+      const downloadUrl = window.URL.createObjectURL(blob);
+
+      const link = document.createElement("a");
+      link.href = downloadUrl;
+      link.download = `${name}-certificate.pdf`;
+      document.body.appendChild(link);
+      link.click();
+      link.remove();
+
+      toast.success("Certificate ready!");
     } catch (error) {
       toast.error("Something went wrong.");
     } finally {
@@ -79,7 +88,7 @@ export const CertificateModal = ({
           <Button
             onClick={handleDownload}
             disabled={loading || name.trim().length < 2}
-            className="w-full"
+            className="w-full bg-sky-900 hover:bg-sky-800 text-white font-semibold"
           >
             {loading ? "Generating..." : "Download Certificate"}
           </Button>

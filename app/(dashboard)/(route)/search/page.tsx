@@ -28,7 +28,7 @@ const SearchPage = async ({
 
     const categories = await db.category.findMany({
         orderBy: {
-        name: "asc"
+          name: "asc"
         }
     });
 

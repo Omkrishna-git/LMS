@@ -59,7 +59,7 @@ export const CourseProgressButton = ({
       disabled={isLoading}
       type="button"
       variant={isCompleted ? "outline" : "default"}
-      className="w-full md:w-auto"
+      className="w-full md:w-auto bg-sky-900 hover:bg-sky-800 text-white font-semibold flex items-center justify-center gap-2"
     >
       {isCompleted ? "Not completed" : "Mark as complete"}
       <Icon className="h-4 w-4 ml-2" />

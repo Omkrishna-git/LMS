@@ -65,7 +65,7 @@ export const CourseSidebarClient = ({
                                 setShowCertificateModal(true);
                             }
                         }}
-                        className="w-full"
+                        className="w-full bg-sky-900 hover:bg-sky-800 text-white font-semibold"
                         variant={progressCount < 100 ? "secondary" : "default"}
                     >
                         {progressCount < 100

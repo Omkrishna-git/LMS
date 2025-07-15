@@ -33,10 +33,10 @@ export const CourseSidebarClient = ({
     return (
         <div className="h-full border-r flex flex-col overflow-y-auto shadow-sm">
             <div className="p-7 flex flex-col border-b">
-                <h1 className="font-semibold">{course.title}</h1>
+                <h1 className="font-semibold text-sky-800">{course.title}</h1>
                 {purchaseExists && (
-                    <div className="mt-10">
-                        <CourseProgress variant="success" value={progressCount} />
+                    <div className="mt-5">
+                        <CourseProgress variant="default" value={progressCount} />
                     </div>
                 )}
             </div>

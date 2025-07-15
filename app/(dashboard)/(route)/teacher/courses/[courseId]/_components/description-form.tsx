@@ -72,8 +72,8 @@ export const DescriptionForm = ({
                     <>Cancel</>
                 ) : (
                     <>
-                    <Pencil className="h-4 w-4 mr-2" />
-                    Edit description
+                        <Pencil className="h-4 w-4 mr-2" />
+                        Edit description
                     </>
                 )}
                 </Button>
@@ -115,6 +115,7 @@ export const DescriptionForm = ({
                             <Button
                                 disabled={!isValid || isSubmitting}
                                 type="submit"
+                                className="bg-sky-900 hover:bg-sky-800 text-white"
                             >
                                 Save
                             </Button>

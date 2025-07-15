@@ -116,6 +116,7 @@ export const CategoryForm = ({
                             <Button
                                 disabled={!isValid || isSubmitting}
                                 type="submit"
+                                className="bg-sky-900 hover:bg-sky-800 text-white"
                             >
                                 Save
                             </Button>

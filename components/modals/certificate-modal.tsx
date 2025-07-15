@@ -76,7 +76,7 @@ export const CertificateModal = ({
     <Dialog open={open} onOpenChange={onClose}>
       <DialogContent>
         <DialogHeader>
-          <DialogTitle>🎓 Generate Certificate</DialogTitle>
+          <DialogTitle> Enter Name on Certificate</DialogTitle>
         </DialogHeader>
         <div className="space-y-4 pt-2">
           <Input

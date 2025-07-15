@@ -13,8 +13,6 @@ generator erd {
   output   = "./ER_Diagram.svg"
 }
 
-
-
 model Course {
   id          String  @id @default(uuid())
   userId      String
